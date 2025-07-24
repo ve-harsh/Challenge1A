@@ -33,7 +33,7 @@ This project extracts the **title** and **structured headings (H1–H3)** from P
 
 ```bash
 docker build --platform linux/amd64 -t adobe-pdf-extractor .
-
+exit
 
 ## ✅ Output Format
 
@@ -48,3 +48,30 @@ Each `.pdf` file is converted to a `.json` file using this structure:
     { "level": "H3", "text": "History of AI", "page": 3 }
   ]
 }
+
+
+##🧠 Approach
+The solution balances layout-based heuristics with lightweight NLP. Here's a breakdown:
+
+🔹 Title Extraction
+Extracted from the first page
+
+Picks the longest meaningful line (with >5 words) that likely represents the title
+
+🔹 Heading Detection
+Each page is scanned for potential headings
+
+A combination of font size, text casing, and line structure is used
+
+The heading level (H1, H2, H3) is assigned based on:
+
+Font size (relative across document)
+
+Common heading patterns (1., 1.1, ending with :)
+
+Text formatting (UPPERCASE, Title Case)
+
+🔹 Language Detection (Internal Use)
+Uses langdetect to identify the primary language
+
+Not included in output but available if needed for multilingual filtering
