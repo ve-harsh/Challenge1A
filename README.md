@@ -33,3 +33,18 @@ This project extracts the **title** and **structured headings (H1–H3)** from P
 
 ```bash
 docker build --platform linux/amd64 -t adobe-pdf-extractor .
+
+
+## ✅ Output Format
+
+Each `.pdf` file is converted to a `.json` file using this structure:
+
+```json
+{
+  "title": "Understanding AI",
+  "outline": [
+    { "level": "H1", "text": "Introduction", "page": 1 },
+    { "level": "H2", "text": "What is AI?", "page": 2 },
+    { "level": "H3", "text": "History of AI", "page": 3 }
+  ]
+}
