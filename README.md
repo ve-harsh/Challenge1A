@@ -29,17 +29,14 @@ This project extracts the **title** and **structured headings (H1–H3)** from P
 - Copies all files and runs `main.py`
 - Creates `/input` and `/output` folders inside container
 
-### Build Docker Image
 
-```bash
-docker build --platform linux/amd64 -t adobe-pdf-extractor .
-exit
+
 
 ## ✅ Output Format
 
 Each `.pdf` file is converted to a `.json` file using this structure:
 
-```json
+
 {
   "title": "Understanding AI",
   "outline": [
@@ -75,3 +72,9 @@ Text formatting (UPPERCASE, Title Case)
 Uses langdetect to identify the primary language
 
 Not included in output but available if needed for multilingual filtering
+
+
+### Build Docker Image
+
+```bash
+docker build --platform linux/amd64 -t adobe-pdf-extractor .
