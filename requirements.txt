@@ -1,0 +1,5 @@
+PyMuPDF==1.23.21                # PDF reading (fitz)
+pdfminer.six==20221105          # Optional PDF parsing backend
+spacy==3.7.2                    # NLP for sentence structure
+numpy==1.23.5                   # For future vectorized logic if needed
+langdetect==1.0.9               # Language detection for title/page text
